@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+        margin: 2rem;
+        padding: 2rem;
+        height: 5rem;
+        width: 5rem;
+    }
+    #grid{
+        padding: 1rem;
+    }
+    body{
+        margin: 0;
+        background: linear-gradient(0deg, #008b65, #afffb1);
+    }
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 1rem;
+    }
+</style>
+<body>
+    <h1 style="text-align:center">BFS TRAVERSAL VISUALIZATION</h1>
+    <div class="inputs" >
+        <h4>Start From =</h4>
+        <input type="number" name="" id="start" placeholder="Start Value" required>
+        <h4>End =</h4>
+        <input type="number" name="" id="end" placeholder="End Value" required>
+        <h4>Search Speed =</h4>
+        <input type="number" name="" id="time" placeholder="Time(Speed of searching)" value="1" required>
+        <button id="find" onclick="bfs()" >Find</button>
+        <button id="reload" onclick="reload()" style="display: none;">Reload</button>
+    </div>
+    <table id="grid"></table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="bfs.js"></script>
+</body>
+</html>
