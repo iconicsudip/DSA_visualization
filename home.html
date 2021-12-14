@@ -27,16 +27,19 @@
         var v=location.origin;
         var extension="";
         var n = "http://127.0.0.1:5500";
+        var path = "";
         if(v==n){
-            extension = ".html";
+            extension =".html";
+        }else{
+            path = "/"+location.pathname.split("/")[1];
         }
         var links = document.getElementsByClassName('link');
         for(var i=0;i<links.length;i++){
             if(document.getElementsByClassName('link')[i].id=="bfs"){
-                document.getElementsByClassName('link').bfs.href=v+"/bfs"+extension;
+                document.getElementsByClassName('link').bfs.href=v+path+"/bfs"+extension;
             }
             if(document.getElementsByClassName('link')[i].id=="dfs"){
-                document.getElementsByClassName('link').dfs.href=v+"/dfs"+extension;
+                document.getElementsByClassName('link').dfs.href=v+path+"/dfs"+extension;
             }
         }
     </script>
