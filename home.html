@@ -20,8 +20,10 @@
 <body>
     <div class="visualizer_links">
         <h1>BFS & DFS VISUALIZER</h1>
-        <a class="link" id="bfs" href="">Breath-First-Search</a>
+        <a class="link" id="bfs" href="">Breadth-First-Search</a>
         <a class="link" id="dfs" href="">Depth-First-Search</a>
+        <h1>Array's Search Technique</h1>
+        <a class="link" id="arrsearch" href="">Element Search in Array (TC-O(n))</a>
     </div>
     <script>
         var v=location.origin;
@@ -40,6 +42,9 @@
             }
             if(document.getElementsByClassName('link')[i].id=="dfs"){
                 document.getElementsByClassName('link').dfs.href=v+path+"/dfs"+extension;
+            }
+            if(document.getElementsByClassName('link')[i].id=="arrsearch"){
+                document.getElementsByClassName('link').arrsearch.href=v+path+"/arrsearch"+extension;
             }
         }
     </script>
