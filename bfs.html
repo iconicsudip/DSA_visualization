@@ -8,18 +8,23 @@
 </head>
 <style>
     td{
-        border: 1px solid black;
+        border: 1px solid transparent;
         margin: 2rem;
-        padding: 2rem;
         height: 5rem;
         width: 5rem;
     }
     #grid{
         padding: 1rem;
+        margin: auto;
     }
     body{
+        height: 100vh;
         margin: 0;
         background: linear-gradient(0deg, #008b65, #afffb1);
+    }
+    html{
+        width: fit-content;
+        margin: auto;
     }
     input[type="number"]::-webkit-outer-spin-button, 
     input[type="number"]::-webkit-inner-spin-button {
@@ -31,25 +36,46 @@
     }
     .inputs{
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        grid-gap: 1rem;
+        justify-content: center;
+        align-content: center;
         flex-direction: row;
-        flex-wrap: nowrap;
+        text-align: center;
+        margin: auto;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
         align-content: center;
         justify-content: center;
         align-items: center;
-        grid-gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1rem;
     }
 </style>
 <body>
-    <h1 style="text-align:center">BFS TRAVERSAL VISUALIZATION</h1>
-    <div class="inputs" >
-        <h4>Start From =</h4>
-        <input type="number" name="" id="start" placeholder="Start Value" required>
-        <h4>End =</h4>
-        <input type="number" name="" id="end" placeholder="End Value" required>
-        <h4>Search Speed =</h4>
-        <input type="number" name="" id="time" placeholder="Time(Speed of searching)" value="1" required>
-        <button id="find" onclick="bfs()" >Find</button>
-        <button id="reload" onclick="reload()" style="display: none;">Reload</button>
+    <div class="top">
+        <h1 style="text-align:center">BFS TRAVERSAL VISUALIZER</h1>
+        <div class="inputs" >
+            <div class="start_block">
+                <h4>Start From 🔰</h4>
+                <input type="number" name="" id="start" placeholder="Start Value" required>
+            </div>
+            <div class="end_block">
+                <h4>End To 🏁</h4>
+                <input type="number" name="" id="end" placeholder="End Value" required>
+            </div>
+            <div class="speed_block">
+                <h4>Search Speed ⌚</h4>
+                <input type="number" name="" id="time" placeholder="Time(Speed of searching)" value="1" required>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="find" onclick="bfs()" >Find</button>
+            <button id="reload" onclick="reload()" style="display: none;">Reload</button>
+        </div>
     </div>
     <table id="grid"></table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
