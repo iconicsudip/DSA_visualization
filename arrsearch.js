@@ -63,6 +63,7 @@ var pos=0;
 var id=1;
 var speed = parseInt(document.getElementById("time").value);
 console.log(speed);
+var found = false;
 //============================================Showing all the nodes============================
 function show(output,input3){
     var arrow =document.getElementById("arrow");
@@ -79,6 +80,7 @@ function show(output,input3){
             document.getElementById(pos+1).appendChild(arrow);
             arrow.style.display="block";
             //=================Showing all present value================
+            found = true;
             var elem = document.getElementById("elements");
             let p_elem  = document.createElement("h3");
             p_elem.innerHTML = "Yes, Search element is found at position "+pos;
@@ -90,7 +92,7 @@ function show(output,input3){
         }
         pos++;
         id++;
-        if(pos==output.length){
+        if(pos==output.length && !found){
             var elem = document.getElementById("elements");
             let p_elem  = document.createElement("h3");
             p_elem.innerHTML = "No, Search element is not found at any position of this array";
