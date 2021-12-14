@@ -122,16 +122,41 @@ function bfs(){
     console.log(speed);
     //============================================Showing all the nodes============================
     function show(start,end,bfs){
+        var arrow =document.getElementById("arrow");
         setTimeout(function () {
+            if(pos!=0){
+                document.getElementById(bfs[pos-1]).removeChild( arrow);
+            }
+
             if(bfs[pos]==end){
                 document.getElementById(bfs[pos]).style.background="#198711";
                 document.getElementById("find").style.display="none";
                 document.getElementById("reload").style.display="block";
+                //===============Arrow====================
+                document.getElementById(bfs[pos]).appendChild(arrow);
+                arrow.style.display="block";
+                //=================Showing all present value================
+                var elem = document.getElementById("elements");
+                let p_elem  = document.createElement("h3");
+                p_elem.innerHTML = bfs[pos];
+                elem.appendChild(p_elem);
             }
             else if(bfs[pos]==start){
                 document.getElementById(bfs[pos]).style.background="#198711";
+                document.getElementById(bfs[pos]).appendChild(arrow);
+                arrow.style.display="block";
+                var elem = document.getElementById("elements");
+                let p_elem  = document.createElement("h3");
+                p_elem.innerHTML = bfs[pos]+",";
+                elem.appendChild(p_elem);
             }else{
                 document.getElementById(bfs[pos]).style.background=" #a50d0d";
+                document.getElementById(bfs[pos]).appendChild(arrow);
+                arrow.style.display="block";
+                var elem = document.getElementById("elements");
+                let p_elem  = document.createElement("h3");
+                p_elem.innerHTML = bfs[pos]+",";
+                elem.appendChild(p_elem);
             }
             pos++;
             if(pos<bfs.length){
