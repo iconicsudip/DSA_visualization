@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element search in O(n)</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+        margin: 2rem;
+        height: 5rem;
+        width: 5rem;
+    }
+    #grid{
+        padding: 1rem;
+        margin: auto;
+    }
+    body{
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(0deg, #008b65, #afffb1);
+    }
+    html{
+        width: fit-content;
+        margin: auto;
+    }
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    .inputs{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        grid-gap: 1rem;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        text-align: center;
+        margin: auto;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    #arrow{
+        width: 0.3rem;
+        height: 2rem;
+        background: rgb(255, 255, 255);
+        border: 2px solid rgb(0, 0, 0);
+        position: relative;
+        margin-left: 1.2rem;
+        margin-right: 2rem;
+        bottom: 150%;
+    }
+    #arrow::after{
+        content: "";
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        background: rgb(255, 0, 0);
+        border:2px solid black;
+    }
+    #elements{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        grid-gap: 0.5rem;
+    }
+    #search{
+        display: none;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="top">
+        <h1 style="text-align:center;margin:0;">SEARCH IN ARRAY (TC-O(n)) VISUALIZER</h1>
+        <div class="inputs" >
+            <div class="start_block">
+                <h4>Number of elements🔰</h4>
+                <input type="number" name="" id="nums" placeholder="Number of element" required>
+            </div>
+            <div class="end_block">
+                <h4>Array's element sholud be between 🏁</h4>
+                <input type="number" name="" id="maxnum" placeholder="Maximum number" required>
+            </div>
+            <div class="speed_block">
+                <h4>Search Speed ⌚</h4>
+                <input type="number" name="" id="time" placeholder="Time(Speed of searching)" value="1" required>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="make_array" onclick="make_array()" >Make array</button>
+            <button id="reload" onclick="reload()" style="display: none;">Reload</button>
+        </div>
+    </div>
+    <div id="arrow" style="display: none;"></div>
+    <div id="search">
+        <input type="number" id="search_input" placeholder="Element to search">
+        <button id="search_button" onclick="search()">Search Element</button>
+        <button id="search_reload" onclick="reload()" style="display: none;">Reload</button>
+    </div>
+    <h1 id="found_elem" style="text-align: center;">Found / Not Found</h1>
+    <div id="elements"></div>
+    <table id="grid" ></table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="arrsearch.js"></script>
+</body>
+</html>
